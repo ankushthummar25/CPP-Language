@@ -5,7 +5,7 @@ using namespace std;
 class store
 {
 public:
-    int p[100], j, d = 0, o[10], z = 0, n, tot = 0,x[10],f=0,t=0;
+    int p[100], j, d = 0, o[10], z = 0, n, tot = 0,x[10],f=0,t=0,total;
     int choice,qun;
     double gst,nbill;
     string i[100], c,m;
@@ -117,7 +117,7 @@ public:
 
         cout<<"\t---------------------------------------------------"<<endl;
         
-        cout<<"\t"<<"No.\t"<<"Items"<<"\t"<<"price"<<"\t"<<"Quantity"<<endl;
+        cout<<"\t"<<"No.\t"<<"Items"<<"\t"<<"price"<<"\t"<<"Quantity"<<"\t"<<"Total"<<endl;
 
         cout<<"\t---------------------------------------------------"<<endl;
         
@@ -128,9 +128,11 @@ public:
             f = x[j];
             n--;
 
+            total = p[n]*f;
+
             cout<<"\t"<<j+1<<"\t";
 
-            cout << i[n] << "\t" << p[n] << "\t" << f <<endl;
+            cout << i[n] << "\t" << p[n] << "\t" << f << "\t\t" << total <<endl;
 
             t = f*p[n];
 
@@ -144,16 +146,16 @@ public:
         nbill=tot+gst;
 
         cout << endl<<endl;
-        cout<<"\t" << "Total bill  : \t\t\t" << tot << endl;
-        cout<<"\t" << "GST         : \t\t\t" << gst << endl;
+        cout<<"\t" << "Total bill  : \t\t\t\t" << tot << endl;
+        cout<<"\t" << "GST         : \t\t\t\t" << gst << endl;
         cout<<"\t---------------------------------------------------"<<endl;
-        cout<<"\t" << "Net bill    : \t\t\t" << nbill << endl;
+        cout<<"\t" << "Net bill    : \t\t\t\t" << nbill << endl;
     }
 
     ~store()
     {
         cout<<endl<<endl;
-        cout<<"\t"<<"\t\t--------- Have A Nice Day ----------" <<"\n\n";
+        cout<<"\t\t"<<"--------- Have A Nice Day ----------" <<"\n\n";
         cout<<"\t==================================================="<<endl;
 
     }
@@ -200,28 +202,28 @@ Enter 0 for bill (OR) Enter your choice : 1
 Enter quantity :12
 
 Enter 0 for bill (OR) Enter your choice : 2
-Enter quantity :10
+Enter quantity :12
 
 Enter 0 for bill (OR) Enter your choice : 3
-Enter quantity :1
+Enter quantity :2
 
 Enter 0 for bill (OR) Enter your choice : 4
 Enter quantity :1
 
 Enter 0 for bill (OR) Enter your choice : 5
-Enter quantity :3
+Enter quantity :12
 
 Enter 0 for bill (OR) Enter your choice : 6
-Enter quantity :2
+Enter quantity :12
 
 Enter 0 for bill (OR) Enter your choice : 7
 Enter quantity :1
 
 Enter 0 for bill (OR) Enter your choice : 8
-Enter quantity :1
+Enter quantity :2
 
 Enter 0 for bill (OR) Enter your choice : 0
- 
+
 
         ===================================================
 
@@ -233,25 +235,26 @@ Enter 0 for bill (OR) Enter your choice : 0
         Customer Mobile Number : 1234567890
 
         ---------------------------------------------------
-        No.     Items   price   Quantity
+        No.     Items   price   Quantity        Total
         ---------------------------------------------------
-        1       Book    35      12
-        2       Pen     5       10
-        3       Colure  50      1
-        4       Bag     650     1
-        5       Pencil  3       3
-        6       Rubber  2       2
-        7       Pad     80      1
-        8       Watch   1150    1
+        1       Book    35      12              420
+        2       Pen     5       12              60
+        3       Colure  50      2               100
+        4       Bag     650     1               650
+        5       Pencil  3       12              36
+        6       Rubber  2       12              24
+        7       Pad     80      1               80
+        8       Watch   1150    2               2300
         ---------------------------------------------------
 
 
-        Total bill  : 2413
-        GST         : 434.34
-        Net bill    : 2847.34
+        Total bill  :                           3670
+        GST         :                           660.6
+        ---------------------------------------------------
+        Net bill    :                           4330.6
 
 
-        --------- Have A Nice Day ----------
+                --------- Have A Nice Day ----------
 
         ===================================================
 
